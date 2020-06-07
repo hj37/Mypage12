@@ -8,6 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <title>Insert title here</title>
  <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -66,6 +68,7 @@
 	if(id == null){
 		response.sendRedirect("../login.jsp");
 	}
+	request.setCharacterEncoding("UTF-8");
 
 %>
 
@@ -97,7 +100,8 @@
 	</tr>
 	<tr>
 			<td>비밀번호</td>
-			<td colspan="2"><input type="password" name="pwd"></td>
+			<td colspan="2">
+			<input type="password"  name="pwd"></td>
 	</tr>
 	<tr>
 			<td>제목</td>
@@ -109,7 +113,9 @@
 	</tr>
 	<tr>
 			<td>파일</td>
-			<td  colspan="2"><input type="file" name="file"></td>
+			
+			<td  colspan="2"><span id="id_sp2"> *한글파일명은 업로드 불가합니다(최대 파일 크기는 100MB이하).</span></label>
+			<input type="file"  name="file"></td>
 	</tr>
 
 	

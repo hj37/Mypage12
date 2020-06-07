@@ -75,8 +75,8 @@
 								lis2 = element.select("a");
 								out.print("<tr>");
 								for(Element e : lis1){
-				 					out.print("<td><img src='" + e.select("img").attr("src") + "' width='"+ 200 + "' height = '"+ 100 + "'>");
-									out.print("<a href='"+e.select("a").attr("href")+"' style='display:block' >'"+e.select("a").text()+"' </a></td>");
+				 					out.print("<td><a href='"+e.select("a").attr("href")+"' style='display:block' target='_blank' ><img src='" + e.select("img").attr("src") + "' width='"+ 200 + "' height = '"+ 100 + "'></a>");
+									out.print("<a href='"+e.select("a").attr("href")+"' style='display:block' target='_blank' >'"+e.select("a").text()+"' </a></td>");
 									
 								}
 								out.print("</tr>");
@@ -109,7 +109,7 @@
 											for(Element e : lis1){
 									 			for(int i = 0; i < 2; i++){
 													if(i == 1){
-														out.print("<td><a href='https://sports.news.naver.com/"+e.select("a").attr("href")+"'>'"+e.select("a").text()+"'</a></td>");
+														out.print("<td><a href='https://sports.news.naver.com/"+e.select("a").attr("href")+"'  target='_blank'>'"+e.select("a").text()+"'</a></td>");
 													}else{
 									 					out.print( "<tr><td>" + e.select("span.number").text() + "</td>");
 													}

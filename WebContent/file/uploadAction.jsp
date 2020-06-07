@@ -15,7 +15,8 @@
 </head>
 <body>
 	<%
-		String directory = "C:/upload/";
+		ServletContext context = request.getServletContext();
+		String directory = context.getRealPath("upload");
 		int maxSize = 1024 * 1024 * 100;
 		String encoding = "UTF-8";
 		

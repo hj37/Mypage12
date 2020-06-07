@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="img.ImgDAO"%>
 <%@page import="img.ImgDTO"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"%>
@@ -18,7 +19,7 @@
 	ServletContext context = request.getServletContext();
 	String imagePath = context.getRealPath("image");
 // 	String directory = "C:/image";
-	int size = 1 * 1024  * 1024;
+	int size = 50 * 1024  * 1024;
 	String filename = "";
 	ImgDTO dto = new ImgDTO();
 	
@@ -37,6 +38,7 @@
 		Enumeration files = multi.getFileNames();
 		String file = (String)files.nextElement();
 		filename = multi.getFilesystemName(file);
+		
 		dto.setFileName(filename);
 		dto.setFileRealName("sm_" + filename);
 		

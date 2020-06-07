@@ -3,6 +3,8 @@ package file;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -21,8 +23,8 @@ public class downloadAction extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		String fileName = request.getParameter("file");
-		
-		String directory = "C:/upload";
+		ServletContext context = request.getServletContext();
+		String directory = context.getRealPath("upload");
 		File file = new File(directory + "/" + fileName);
 	
 		String mimeType = getServletContext().getMimeType(file.toString());

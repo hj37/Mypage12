@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="java.util.List"%>
 <%@page import="img.ImgDTO"%>
 
@@ -112,7 +113,7 @@
 							 			ImgDTO dto = list.get(i);
 							%>
 								<section class="4u" >
-								<img src="../image/<%=dto.getFileRealName() %>" style = "display: block;">
+								<img src="<%=request.getContextPath() %>/image/<%=dto.getFileRealName() %>" style = "display: block;">
 								<div class="box" style="width: 300px; padding-top: 0px; padding-bottom: 0px; margin-bottom: 30px;">
  								<a href="imgContent.jsp?num=<%=dto.getNum()%>&pageNum=<%=pageNum%>" class="button"> <%=dto.getSubject() %></a> 
 								</div>

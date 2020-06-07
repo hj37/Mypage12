@@ -100,6 +100,12 @@ public class FileDAO {
 			}//insertBoard
 			
 			
+			
+			
+			
+			
+			
+			
 			//글 하나의 정보를 검색하여 글정보를 제공해주는 메소드 
 			public FileDTO getFileBoard(int num) {
 					
@@ -148,7 +154,31 @@ public class FileDAO {
 
 			}
 			
-			
+			public void fileDeleteBoard(int num) {
+				int check = 0;
+				con = null;
+				pstmt = null;
+				rs = null;
+				String sql = "";
+				try {
+					//1, 2 디비연결 
+					con = getConnection();
+					//3 sql num에 해당하는 paaswd가져오기 
+					sql="delete from file where num=?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					//4 rs= 실행 저장 
+					pstmt.executeUpdate();
+				}catch(Exception e) {
+					e.printStackTrace();
+				}finally {
+					if(rs != null) try {rs.close();} catch(SQLException ex) {}
+					if(pstmt != null) try {pstmt.close();} catch(SQLException ex) {}
+					if(con != null) try{con.close();}catch(SQLException ex) {}
+				}
+
+			}
+
 			
 			
 			

@@ -175,7 +175,7 @@ String id = (String)session.getAttribute("id");
 if(id!= null){
 %>
 <input type="button" value="글수정" class="btn" onclick="location.href='update.jsp?pageNum=<%=pageNum%>&num=<%=DBnum%>'">
-<input type="button" value="글삭제" class="btn" onclick="location.href='delete.jsp?pageNum=<%=pageNum%>&num=<%=DBnum%>'">
+<input type="button" value="글삭제" class="btn" onclick="location.href='FileDelete.jsp?pageNum=<%=pageNum%>&num=<%=DBnum%>'">
 <% 
 }
 %>
